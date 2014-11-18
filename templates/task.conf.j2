@@ -8,6 +8,8 @@ autorestart={{ autorestart }}
 user={{ user }}
 numprocs={{ numprocs }}
 {% if stopsignal %}stopsignal={{ stopsignal }}{% endif %}
+{% if stdout_logfile %}stdout_logfile={{ stdout_logfile }}{% endif %}
+{% if stderr_logfile %}stderr_logfile={{ stderr_logfile }}{% endif %}
 {% if env_vars|length > 0 %}
 environment={% for name, value in env_vars.iteritems() %}{{ name }}="{{ value }}"{% if not loop.last %},{% endif %}{% endfor %}
 {% endif %}
